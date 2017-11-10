@@ -4,7 +4,7 @@
 
 Currently, the state of TWRP makes using AnyKernel2 very impractical. Additionally, AOSP can consume a lot of space, even with a `--depth=1` flag. With this manifest, syncing and building are quicker as there are less files for ninja and soong to parse. Win win!
 
-Size comparison (done with android-8.0.0_r33):
+Size comparison (done with android-8.0.0_r33 using `du -sh`):
 
 | Manifest | `--clone-depth=1`? | Size |
 | -------- | ------------------ | ---- |
