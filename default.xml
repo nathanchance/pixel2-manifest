@@ -39,6 +39,7 @@
   <project path="external/clang" name="platform/external/clang" groups="pdk" clone-depth="1" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" clone-depth="1" />
   <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="pdk" clone-depth="1" />
+  <project path="external/dtc" name="platform/external/dtc" groups="pdk" clone-depth="1" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" clone-depth="1" />
   <project path="external/eigen" name="platform/external/eigen" groups="pdk" clone-depth="1" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" clone-depth="1" />
@@ -133,6 +134,7 @@
   <project path="system/libfmq" name="platform/system/libfmq" groups="pdk" clone-depth="1" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="pdk" clone-depth="1" />
   <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="pdk" clone-depth="1" />
+  <project path="system/libufdt" name="platform/system/libufdt" groups="pdk" clone-depth="1" />
   <project path="system/libvintf" name="platform/system/libvintf" groups="pdk" clone-depth="1" />
   <project path="system/media" name="platform/system/media" groups="pdk" clone-depth="1" />
   <project path="system/netd" name="platform/system/netd" groups="pdk" clone-depth="1" />
