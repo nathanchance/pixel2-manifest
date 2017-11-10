@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com/"
+           review="https://android-review.googlesource.com/" />
+  <default revision="refs/tags/android-8.0.0_r33"
+           remote="aosp"
+           sync-j="4" />
+
+  <project path="build/make" name="platform/build" groups="pdk" clone-depth="1" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" clone-depth="1" />
+  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" clone-depth="1" />
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" clone-depth="1" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="bionic" name="platform/bionic" groups="pdk" clone-depth="1" />
+  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" clone-depth="1" />
+  <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" clone-depth="1" />
+  <project path="device/google/muskie" name="device/google/muskie" groups="device,muskie" clone-depth="1" />
+  <project path="device/google/taimen" name="device/google/taimen" groups="device,taimen" clone-depth="1" />
+  <project path="device/google/wahoo" name="device/google/wahoo" groups="device,wahoo" clone-depth="1" />
+  <project path="device/google/wahoo-kernel" name="device/google/wahoo-kernel" groups="device,wahoo" clone-depth="1" />
+  <project path="external/aac" name="platform/external/aac" groups="pdk" clone-depth="1" />
+  <project path="external/avb" name="platform/external/avb" groups="pdk" clone-depth="1" />
+  <project path="external/bison" name="platform/external/bison" groups="pdk" clone-depth="1" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" clone-depth="1" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" clone-depth="1" />
+  <project path="external/cblas" name="platform/external/cblas" groups="pdk" clone-depth="1" />
+  <project path="external/clang" name="platform/external/clang" groups="pdk" clone-depth="1" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" clone-depth="1" />
+  <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="pdk" clone-depth="1" />
+  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" clone-depth="1" />
+  <project path="external/eigen" name="platform/external/eigen" groups="pdk" clone-depth="1" />
+  <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" clone-depth="1" />
+  <project path="external/expat" name="platform/external/expat" groups="pdk" clone-depth="1" />
+  <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="pdk" clone-depth="1" />
+  <project path="external/fec" name="platform/external/fec" groups="pdk" clone-depth="1" />
+  <project path="external/flac" name="platform/external/flac" groups="pdk" clone-depth="1" />
+  <project path="external/freetype" name="platform/external/freetype" groups="pdk" clone-depth="1" />
+  <project path="external/gemmlowp" name="platform/external/gemmlowp" groups="pdk" clone-depth="1" />
+  <project path="external/giflib" name="platform/external/giflib" groups="pdk,qcom_msm8x26" clone-depth="1" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" groups="pdk" clone-depth="1" />
+  <project path="external/googletest" name="platform/external/googletest" groups="pdk" clone-depth="1" />
+  <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" clone-depth="1" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" clone-depth="1" />
+  <project path="external/javasqlite" name="platform/external/javasqlite" groups="pdk" clone-depth="1" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" clone-depth="1" />
+  <project path="external/jsmn" name="platform/external/jsmn" groups="pdk" clone-depth="1" />
+  <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="pdk" clone-depth="1" />
+  <project path="external/kmod" name="platform/external/kmod" groups="pdk" clone-depth="1" />
+  <project path="external/libavc" name="platform/external/libavc" groups="pdk" clone-depth="1" />
+  <project path="external/libcap" name="platform/external/libcap" groups="pdk" clone-depth="1" />
+  <project path="external/libchrome" name="platform/external/libchrome" groups="pdk" clone-depth="1" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" clone-depth="1" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" clone-depth="1" />
+  <project path="external/libdrm" name="platform/external/libdrm" groups="pdk" clone-depth="1" />
+  <project path="external/libevent" name="platform/external/libevent" groups="pdk" clone-depth="1" />
+  <project path="external/libexif" name="platform/external/libexif" groups="pdk" clone-depth="1" />
+  <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" clone-depth="1" />
+  <project path="external/libhevc" name="platform/external/libhevc" groups="pdk" clone-depth="1" />
+  <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="pdk" clone-depth="1" />
+  <project path="external/libmpeg2" name="platform/external/libmpeg2" groups="pdk" clone-depth="1" />
+  <project path="external/libnl" name="platform/external/libnl" groups="pdk" clone-depth="1" />
+  <project path="external/libopus" name="platform/external/libopus" groups="pdk" clone-depth="1" />
+  <project path="external/libpng" name="platform/external/libpng" groups="pdk" clone-depth="1" />
+  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" clone-depth="1" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" clone-depth="1" />
+  <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" clone-depth="1" />
+  <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" clone-depth="1" />
+  <project path="external/libyuv" name="platform/external/libyuv" groups="pdk,libyuv" clone-depth="1" />
+  <project path="external/llvm" name="platform/external/llvm" groups="pdk" clone-depth="1" />
+  <project path="external/lzma" name="platform/external/lzma" groups="pdk" clone-depth="1" />
+  <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" clone-depth="1" />
+  <project path="external/minijail" name="platform/external/minijail" groups="pdk" clone-depth="1" />
+  <project path="external/modp_b64" name="platform/external/modp_b64" groups="pdk" clone-depth="1" />
+  <project path="external/pcre" name="platform/external/pcre" groups="pdk" clone-depth="1" />
+  <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" clone-depth="1" />
+  <project path="external/piex" name="platform/external/piex" groups="pdk" clone-depth="1" />
+  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" clone-depth="1" />
+  <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" clone-depth="1" />
+  <project path="external/selinux" name="platform/external/selinux" groups="pdk" clone-depth="1" />
+  <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" clone-depth="1" />
+  <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" clone-depth="1" />
+  <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" clone-depth="1" />
+  <project path="external/speex" name="platform/external/speex" groups="pdk" clone-depth="1" />
+  <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" clone-depth="1" />
+  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" clone-depth="1" />
+  <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" clone-depth="1" />
+  <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" clone-depth="1" />
+  <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" clone-depth="1" />
+  <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" clone-depth="1" />
+  <project path="external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" clone-depth="1" />
+  <project path="external/zlib" name="platform/external/zlib" groups="pdk" clone-depth="1" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" clone-depth="1" />
+  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
+  <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" clone-depth="1" />
+  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" clone-depth="1" />
+  <project path="frameworks/hardware/interfaces" name="platform/frameworks/hardware/interfaces" groups="pdk" clone-depth="1" />
+  <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" clone-depth="1" />
+  <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" clone-depth="1" />
+  <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
+  <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" clone-depth="1" />
+  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" clone-depth="1" />
+  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" clone-depth="1" />
+  <project path="hardware/qcom/msm8998" name="platform/hardware/qcom/msm8998" groups="qcom_msm8998" clone-depth="1" />
+  <project path="libcore" name="platform/libcore" groups="pdk" clone-depth="1" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="pdk,linux,arm" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="pdk,linux" clone-depth="1" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
+  <project path="system/chre" name="platform/system/chre" groups="pdk" clone-depth="1" />
+  <project path="system/core" name="platform/system/core" groups="pdk" clone-depth="1" />
+  <project path="system/extras" name="platform/system/extras" groups="pdk" clone-depth="1" />
+  <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" clone-depth="1" />
+  <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" clone-depth="1" />
+  <project path="system/libfmq" name="platform/system/libfmq" groups="pdk" clone-depth="1" />
+  <project path="system/libhidl" name="platform/system/libhidl" groups="pdk" clone-depth="1" />
+  <project path="system/libhwbinder" name="platform/system/libhwbinder" groups="pdk" clone-depth="1" />
+  <project path="system/libvintf" name="platform/system/libvintf" groups="pdk" clone-depth="1" />
+  <project path="system/media" name="platform/system/media" groups="pdk" clone-depth="1" />
+  <project path="system/netd" name="platform/system/netd" groups="pdk" clone-depth="1" />
+  <project path="system/nvram" name="platform/system/nvram" groups="pdk" clone-depth="1" />
+  <project path="system/security" name="platform/system/security" groups="pdk" clone-depth="1" />
+  <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" clone-depth="1" />
+  <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" clone-depth="1" />
+  <project path="system/vold" name="platform/system/vold" groups="pdk" clone-depth="1" />
+  <project path="test/vts" name="platform/test/vts" groups="vts,pdk" clone-depth="1" />
+  <project path="toolchain/binutils" name="toolchain/binutils" groups="pdk" clone-depth="1" />
+
+</manifest>
