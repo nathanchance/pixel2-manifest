@@ -10,7 +10,7 @@ Size comparison (done with android-8.0.0_r33):
 | -------- | ------------------ | ---- |
 | AOSP     | No                 | 55GB |
 | AOSP     | Yes                | 41GB |
-| Minimal  | N/A                | 18GB |
+| Minimal  | N/A                | 16GB |
 
 ## Usage
 
