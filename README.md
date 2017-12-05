@@ -4,19 +4,21 @@
 
 Currently, the state of TWRP makes using AnyKernel2 very impractical. Additionally, AOSP can consume a lot of space, even with a `--depth=1` flag. With this manifest, syncing and building are quicker as there are less files for ninja and soong to parse. Win win!
 
-Size comparison (done with android-8.0.0_r33 using `du -sh`):
+NOTE: Most of the still tracked repos aren't necessarily for compilation but to make the build start. This could be slimmed down by including a prebuilt recovery ramdisk but I'm not interested in that.
 
-| Manifest | `--clone-depth=1`? | Size |
-| -------- | ------------------ | ---- |
-| AOSP     | No                 | 55GB |
-| AOSP     | Yes                | 41GB |
-| Minimal  | N/A                | 16GB |
+Size comparison (done with android-8.1.0_r1 using `du -sh`):
+
+| Manifest | `--clone-depth=1`? | Size | Projects |
+| -------- | ------------------ | ---- | -------- |
+| AOSP     | No                 | 55GB | 592      |
+| AOSP     | Yes                | 43GB | 592      |
+| Minimal  | N/A                | 22GB | 206      |
 
 ## Usage
 
 1. Sync the manifest
 ```bash
-repo init -u https://github.com/nathanchance/pixel2-manifest -b 8.0.0
+repo init -u https://github.com/nathanchance/pixel2-manifest -b 8.1.0
 repo sync -j$(nproc --all)
 ```
 
@@ -57,14 +59,14 @@ export AOSP_FOLDER=$(pwd)
 
 4. Download the kernel source from Google:
 ```bash
-git clone -b android-msm-wahoo-4.4-oreo-dr1 https://android.googlesource.com/kernel/msm ../wahoo-kernel
+git clone -b android-msm-wahoo-4.4-oreo-mr1 https://android.googlesource.com/kernel/msm ../wahoo-kernel
 ```
 
 5. Start building the kernel!
 ```bash
 cd ../wahoo-kernel
 make -j$(nproc --all) ARCH=arm64 O=out wahoo_defconfig
-make -j$(nproc --all) ARCH=arm64 CC=${AOSP_FOLDER}/prebuilts/clang/host/linux-x86/clang-3859424/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=${AOSP_FOLDER}/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android- O=out
+make -j$(nproc --all) ARCH=arm64 CC=${AOSP_FOLDER}/prebuilts/clang/host/linux-x86/clang-4053586/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=${AOSP_FOLDER}/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android- O=out
 ```
 
 If successful, the kernel will be located at `out/arch/arm64/boot/Image.lz4-dtb`, which you can build and flash using the Usage section above.
