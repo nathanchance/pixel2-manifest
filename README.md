@@ -55,7 +55,7 @@ make -j$(nproc --all) dtc mkdtimg
 export AOSP_FOLDER=$(pwd)
 ```
 
-3. Copy these files to somewhere in your path (like /usr/local/bin) or run `export PATH=out/host/linux-x86/bin:${PATH}`
+3. Copy these files to somewhere in your path (like /usr/local/bin) or run `export PATH=${AOSP_FOLDER}/out/host/linux-x86/bin:${PATH}`
 
 4. Download the kernel source from Google:
 ```bash
